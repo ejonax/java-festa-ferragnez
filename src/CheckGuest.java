@@ -10,6 +10,9 @@ public class CheckGuest {
         System.out.println("Inserisci il tuo nome");
         String nomeInvitato = in.nextLine();
 
+
+        /************* FOR LOOP ************/
+        /*           
         int j= -1;// salviamo l'indice dell'utente che si troverà nella lista degli invitati
         for (int i=0; i < invitatiLength; i++){
             
@@ -23,5 +26,25 @@ public class CheckGuest {
         if (j==-1) { // se l'indice j sarà ancora -1 dopo che abbiamo girato tutto l'array degli invitati vuol dire che il nome dell'utente non è presente nella listaInvitati
           System.out.println("Il tuo nome non si trova nella lista degli invitati");
         }
+        */
+      
+        /**************************************/
+
+        /********** WHILE LOOP ***************/
+        int j=-1;
+        int i=0;
+        while (i < invitatiLength){
+            if (nomeInvitato.equals(listaInvitati[i])){
+                j = i;
+                System.out.println("Il tuo nome è nella lista degli invitati, benvenuto!");
+                break; // una volta trovato il nome dell'utente nella lista non continuiamo con le iterazioni successive del ciclo
+            } 
+            i++;
+        }
+        
+        if (j==-1) { // se l'indice j sarà ancora -1 dopo che abbiamo girato tutto l'array degli invitati vuol dire che il nome dell'utente non è presente nella listaInvitati
+        System.out.println("Il tuo nome non si trova nella lista degli invitati");
+        }
+        /**************************************/
     }
 }
