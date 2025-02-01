@@ -10,18 +10,18 @@ public class CheckGuestBonus {
         String nomeInvitato = in.nextLine();
 
         /********** WHILE LOOP ***************/
-        int j=-1;
+        boolean j=false;
         int i=0;
         while (i < invitatiLength){
             if (nomeInvitato.equals(listaInvitati[i])){
-                j = i;
+                j = true;
                 System.out.println("Il tuo nome è nella lista degli invitati, benvenuto!");
                 break; // una volta trovato il nome dell'utente nella lista non continuiamo con le iterazioni successive del ciclo
             } 
             i++;
         }
         
-        if (j==-1) { // se l'indice j sarà ancora -1 dopo che abbiamo girato tutto l'array degli invitati vuol dire che il nome dell'utente non è presente nella listaInvitati
+        if (j==false) { // se l'indice j sarà ancora -1 dopo che abbiamo girato tutto l'array degli invitati vuol dire che il nome dell'utente non è presente nella listaInvitati
         System.out.println("Il tuo nome non si trova nella lista degli invitati");
         }
        
